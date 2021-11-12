@@ -1,0 +1,13 @@
+---
+- name: Create user on all managed nodes
+  hosts: dbserver
+  tasks:
+   - name: User creation
+     user: 
+      name: Mbitock
+      password: tonton
+      home: /home/Mbitock
+      uid: 12345
+      shell: /bin/bash
+      comment: "A good devops Engr"
+...
