@@ -1,6 +1,7 @@
 ---
 - name: Configuring apache2
   hosts: all
+  become: true
   tasks:
    - name: Install apache2
      apt:
@@ -9,7 +10,7 @@
       update_cache: yes
    - name: Edit the index.html file
      copy: 
-      content: "Hello Jack"
+      content: "Hello ADJ"
       dest: /var/www/html/index.html
    - name: Restart apache2 service
      service:

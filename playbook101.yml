@@ -1,0 +1,20 @@
+---
+- name: Check if a file has executable permissions if not, change the ownership and group ownership
+  hosts: all
+  become: true
+  tasks:
+   - name: Check for the file
+     stat:
+      path: /tmp/file1
+     register: results
+   - name: Display the results on the screen
+     debug:
+      var: results
+   - name: Check for executable persmissions and change ownership and group ownership accordingly
+     file:
+      name: /tmp/file1
+      state: touch
+      owner: root
+      group: root
+     when: results.stat.executable == false
+...

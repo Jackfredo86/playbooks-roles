@@ -6,13 +6,5 @@
    - name: Create a tomcat container
      docker_container:
       name: webserver
-      image: tomcat           
-   - name: Stop the tomcat container
-     docker_container:
-      name: webserver
-      state: stopped
-   - name: Delete the tomcat container
-     docker_container:
-      name: webserver
-      state: absent         
+      image: tomcat
 ...

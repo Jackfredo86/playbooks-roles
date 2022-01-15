@@ -8,14 +8,13 @@
       name: mydb
       image: mysql
       env:
-       MYSQL_ROOT_PASSWORD: jack
-
+       MYSQL_ROOT_PASSWORD: anto
    - name: Create a wordpress container
      docker_container:
       name: mywordpress
       image: wordpress
       ports:
-       - 8989:80
+       - 9090:80
       links:
-       - mydb:mysql           
+       - mydb:mysql
 ...

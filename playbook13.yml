@@ -1,9 +1,9 @@
 ---
 - name: Setup of Jenkins and required S/W's
   hosts: jenkinsserver
-  tasks:
+  tasks:             
    - name: Setup required S/W's for jenkins
-     apt:
+     apt:  
       name: "{{item.a}}"
       state: present
       update_cache: "{{item.b}}"

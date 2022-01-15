@@ -1,5 +1,5 @@
 ---
-- name: Install/uninstall s/w applications
+- name: Install/Uninstall s/w applications
   hosts: all
   become: true
   vars:
@@ -7,7 +7,7 @@
    - b: present
    - c: no
   tasks:
-   - name: Install/uninstall
+   - name: Install/Uninstall
      apt:
       name: "{{a}}"
       state: "{{b}}"

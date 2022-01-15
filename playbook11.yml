@@ -11,11 +11,11 @@
      with_items:
       - {a: Anto,b: hbc,c: /home/Anto}
       - {a: Nana,b: hbc,c: /home/ubuntu/Nana}
-   - name: Copy files into the users home dir
+   - name: Copy files into the users home directory
      copy:
       src: "{{item.a}}"
       dest: "{{item.b}}"
      with_items:
       - {a: /etc/passwd,b: /home/Anto}
-      - {a: /etc/group,b: /home/ubuntu/Nana}
+      - {a: /etc/passwd,b: /home/ubuntu/Nana}
 ...

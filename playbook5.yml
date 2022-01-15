@@ -1,7 +1,6 @@
 ---
 - name: Create users and creates files/dirs in the users home dir
   hosts: all
-  become: true
   tasks:
    - name: Create users
      user:

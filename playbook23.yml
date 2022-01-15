@@ -1,16 +1,17 @@
 ---
 - name: Install docker and required components
   hosts: all
+  become: true
   tasks:
-   - name: install python pip
+   - name: Install python pip
      apt:
       name: python3-pip
       state: present
       update_cache: yes
-   - name: Download the docker shell script, install docker, install docker-py
-     shell: "{{item}}"
-     with_items:
-      - curl -fsSL https://get.docker.com -o get-docker.sh
-      - sh get-docker.sh
-      - pip3 install docker-py 
+   - name: Download the docker shell script
+     shell: curl -fsSL https://get.docker.com -o get-docker.sh
+   - name: Install docker
+     shell: sh get-docker.sh
+   - name: Install docker-py
+     shell: pip3 install docker-py
 ...

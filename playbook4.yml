@@ -1,8 +1,9 @@
 ---
-- name: Install/uninstall s/w applications
+- name: Install/Uninstall s/w applications
   hosts: all
+  become: true
   tasks:
-   - name: Install/uninstall
+   - name: Install/Unninstall
      apt:
       name: "{{a}}"
       state: "{{b}}"
